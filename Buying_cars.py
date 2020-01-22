@@ -49,4 +49,4 @@ else:
     total_cost = order_cost
 
 
-print(total_cost)
+print(f"Total price of your cars is {total_cost}!")
