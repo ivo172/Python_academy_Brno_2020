@@ -29,8 +29,6 @@ if order_car > 1:
 else:
     order_cost = mercedes_cost
 
-print(order_cost)
-
 count_car = int(input("How many cars? "))
 
 if count_car > 1:
