@@ -42,7 +42,8 @@ print(f"On index 2 is: {index2}")
 last_index = employees[-1]
 max_index = len(employees)
 
+max_index = max_index - 1  # counting correction from zero
+
 # Last index
 
 print(f"On index {max_index} is: {last_index}")
-
