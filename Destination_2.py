@@ -59,24 +59,46 @@ age = 2020 - int(year_birth)
 
 if age <= 15:
     print("Only for ages 15 and older, game over!")
-
-
-
+    exit()
 
 email = input("email: ")
-heslo = input("Password: ")
-print("=" * 80)
 
+is_et_email = email.find("@")
+
+if is_et_email == -1:
+    print("Bad email address!")
+    exit()
+
+password: str = input("Password: ")
+
+num_password = len(password)
+
+if num_password < 8:
+    print("Min. 8 characters pls.")
+    exit()
+
+first_password = password[0]
+last_password = password[-1]
+
+first_password_ok = first_password.isnumeric()
+last_password_ok = last_password.isnumeric()
+a1z_password_ok = password.isnumeric()
+
+if first_password_ok:
+    print("Password error")
+    exit()
+
+if last_password_ok:
+    print("Password error")
+    exit()
+
+if a1z_password_ok is False:
+    print("Password error")
+    exit()
+
+print("=" * 80)
 
 # Thank user by the input name and inform him/her about the reservation made
 
 print(f"Thank you for registering, Mr / Mrs {first_name} {second_name}")
 print(f"Your reservation {city} and price {cost}")
-
-
-# under 15 years of age Emails have to contain @ symbol Password has to be at least 8 chars long, cannot begin and
-# end with a number and has to contain both letters and numbers If at least one of the above requirements is not met,
-# the whole reservation process should be cancelled with apropriate message.
-#
-# On the other hand, if everything went well the program should summarize the reservation
-# details mentioning the user's name, destination and price.
