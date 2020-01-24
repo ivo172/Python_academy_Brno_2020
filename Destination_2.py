@@ -1,7 +1,7 @@
 # Greet the client
 
 print("=" * 80)
-print("Welcome in Dovolenkovnik \na place to choose a holiday!!!")
+print("Welcome in Destination \na place to choose a holiday!!!")
 print("=" * 80)
 
 # Offer destinations
