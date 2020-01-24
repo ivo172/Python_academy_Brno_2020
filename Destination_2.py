@@ -1,5 +1,6 @@
-# Greet the client
+import datetime
 
+# Greet the client
 print("=" * 80)
 print("Welcome in Destination \na place to choose a holiday!!!")
 print("=" * 80)
