@@ -1,4 +1,4 @@
-import datetime
+import datetime     # import library datetime 
 
 # Greet the client
 print("=" * 80)
@@ -55,7 +55,9 @@ first_name = input("Name: ")
 second_name = input("Second name: ")
 year_birth = input("Year of birth: ")
 
-age = 2020 - int(year_birth)
+year = datetime.date.today().year   # extract actual year
+
+age = year - int(year_birth)
 
 if age <= 15:
     print("Only for ages 15 and older, game over!")
