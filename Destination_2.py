@@ -1,7 +1,9 @@
-# Greet the client
 
+import datetime     # import library datetime
+
+# Greet the client
 print("=" * 80)
-print("Welcome in Dovolenkovnik \na place to choose a holiday!!!")
+print("Welcome in Destination \na place to choose a holiday!!!")
 print("=" * 80)
 
 # Offer destinations
@@ -43,7 +45,6 @@ elif city == "Ostrava":
 else:
     cost = cost
 
-
 # Introduce registration
 print("_" * 80)
 print("Please register to complete your order:")
@@ -55,15 +56,17 @@ first_name = input("Name: ")
 second_name = input("Second name: ")
 year_birth = input("Year of birth: ")
 
-age = 2020 - int(year_birth)
+year = datetime.date.today().year   # extract actual year
 
-if age <= 15:
+age = year - int(year_birth)
+
+if age <= 14:
     print("Only for ages 15 and older, game over!")
     exit()
 
 email = input("email: ")
 
-is_et_email = email.find("@")
+is_et_email = email.find("@")   # when it finds @, returns -1
 
 if is_et_email == -1:
     print("Bad email address!")
@@ -73,26 +76,26 @@ password: str = input("Password: ")
 
 num_password = len(password)
 
-if num_password < 8:
+if num_password < 8:    # password min. 8 characters
     print("Min. 8 characters pls.")
     exit()
 
 first_password = password[0]
 last_password = password[-1]
 
-first_password_ok = first_password.isnumeric()
-last_password_ok = last_password.isnumeric()
-a1z_password_ok = password.isnumeric()
+first_password_ok = first_password.isnumeric()  # first character cannot be a number!
+last_password_ok = last_password.isnumeric()    # last character cannot be a number!
+a1z_password_ok = password.isalnum()    # password must contain number(s) and letter(s)!
 
-if first_password_ok:
+if first_password_ok:   # if True - exit
     print("Password error")
     exit()
 
-if last_password_ok:
+if last_password_ok:    # if True - exit
     print("Password error")
     exit()
 
-if a1z_password_ok is False:
+if not a1z_password_ok:     # if not True - exit
     print("Password error")
     exit()
 
