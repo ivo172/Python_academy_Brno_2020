@@ -1,2 +1,2 @@
-# Python_academy_Brno_2020 - homework
+# Python_academy_Brno_2020 - homeworks
 
