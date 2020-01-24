@@ -43,7 +43,6 @@ elif city == "Ostrava":
 else:
     cost = cost
 
-
 # Introduce registration
 print("_" * 80)
 print("Please register to complete your order:")
@@ -63,7 +62,7 @@ if age <= 15:
 
 email = input("email: ")
 
-is_et_email = email.find("@")
+is_et_email = email.find("@")   # when it finds @, returns -1
 
 if is_et_email == -1:
     print("Bad email address!")
@@ -73,26 +72,26 @@ password: str = input("Password: ")
 
 num_password = len(password)
 
-if num_password < 8:
+if num_password < 8:    # password min. 8 characters
     print("Min. 8 characters pls.")
     exit()
 
 first_password = password[0]
 last_password = password[-1]
 
-first_password_ok = first_password.isnumeric()
-last_password_ok = last_password.isnumeric()
-a1z_password_ok = password.isnumeric()
+first_password_ok = first_password.isnumeric()  # first character cannot be a number!
+last_password_ok = last_password.isnumeric()    # last character cannot be a number!
+a1z_password_ok = password.isalnum()    # password must contain number(s) and letter(s)!
 
-if first_password_ok:
+if first_password_ok:   # if True - exit
     print("Password error")
     exit()
 
-if last_password_ok:
+if last_password_ok:    # if True - exit
     print("Password error")
     exit()
 
-if a1z_password_ok is False:
+if not a1z_password_ok:     # if not True - exit
     print("Password error")
     exit()
 
