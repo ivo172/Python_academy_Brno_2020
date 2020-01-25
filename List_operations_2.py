@@ -23,4 +23,4 @@ print(f"Jacob is on the index: {jacob_index}")
 # Number of name Agnes
 
 agnes_count = employees.count("Agnes")
-print(f"Number of repetitions of the name Agnes: {agnes_count}")
+print(f"Number of repetitions of the name Agnes:  {agnes_count}")
