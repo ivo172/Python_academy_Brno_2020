@@ -36,10 +36,7 @@ cost = offers[user_choise]["cost"]
 
 # For destinations Svitavy and Ostrava we offer a special discount of 25%. We cannot provide our services to clients:
 
-if city == "Svitavy":
-    cost = cost * 0.75
-    print(f"Good choice, we have a 25% discount for this destination")
-elif city == "Ostrava":
+if city == "Svitavy" or city == "Ostrava":
     cost = cost * 0.75
     print(f"Good choice, we have a 25% discount for this destination")
 else:
@@ -66,10 +63,8 @@ if age <= 14:
 
 email = input("email: ")
 
-is_et_email = email.find("@")   # when it finds @, returns -1
-
-if is_et_email == -1:
-    print("Bad email address!")
+if not "@" in email:
+    print("Incorrect email!")
     exit()
 
 password: str = input("Password: ")
