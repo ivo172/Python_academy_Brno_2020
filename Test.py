@@ -1,20 +1,8 @@
-# my_str = 'Python'
-# result = ''
+some_str = input('Hello, please enter anything you want: ')
 
-# #if my_str.istitle():
-# #    result = 'Titlecased'
-# #else:
-# #    result = 'Not titlecased'
-
-# result = "Titlecased" if my_str == "Titlecased" else "Not titlecased"
-
-import sys
-
-a = 1
-
-if a == 1:
-    print("ok")
-    
-else:print("not ok")
-
-print("anythings else")
+if some_str.isupper():
+    print('All letters in your input are uppercase')
+elif some_str.islower():
+    print('All letters in your input are lowercase')
+else:
+    print('There are both uppercase and lowercase letters')
