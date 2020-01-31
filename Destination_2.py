@@ -1,7 +1,5 @@
 
 import datetime     # import library datetime
-import sys
-
 
 # Greet the client
 print("=" * 80)
