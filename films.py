@@ -15,11 +15,16 @@ films = dict()
 films.update(DRAMA=film)
 print(films)
 
+films.update(THRILLER = {'name':'Mad Max'})
+
+print(films)
+
 print(f"We can currently offer: {(list(films))}")
 genre = input("What genre are you interested?: ")
 
 if genre == "DRAMA":
     print(f"The genre {genre} represent film {films[genre]}.")
+
 
 films.clear()
 print("Database has been erased: ")
