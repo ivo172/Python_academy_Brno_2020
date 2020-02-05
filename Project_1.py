@@ -1,18 +1,4 @@
 '''
-author = Ivo Marek
-
-3. Check whether the password and username entered are among those registered.
-| USER |   PASSWORD  |
------------------------
-| bob  |     123     |
-| ann  |    pass123  |
-| mike | password123 |
-| liz  |    pass123  |
-
-If you consider this task difficult, then just check, whether the username and password entered are among the registered, without taking care of pairing them together.
-
-4. Ask the user to select among the three texts stored in the variable TEXTS.
-
 5. Calculate the following statistics for the selected text:
     number of words in total
     number of words starting with capital letter
@@ -93,17 +79,38 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
 ]
+users = {'bob':123, 'ann':'pass123', 'mike':'password123', 'liz':123}
 
-USERS = {'bob':123, 'ann':'pass123', 'mike':'password123', 'liz':123}
-
-print(80*'-')
+print(80 * '-') # Print line
 print('Welcome to the app. Please log in:')
 username = input('USER: ')
-password = input('PASSWORD: ')
+
+ok_pass = str(users.get(username, 'wrong'))
+
+if ok_pass == 'wrong':     # Validation username, if username isn't in USERS ==> None
+    print('Username not found!')
+    quit()
+
+password = str(input('PASSWORD: '))
+
+if password == ok_pass:     # Validation password
+    pass
+else:
+    print('Password is wrong!')
+    quit()
+print(80 * '-') # Print line
+
+choice_text = input('We have 3 texts to be analyzed. '
+                    'Enter a number btw. 1 and 3 to select: ')
+print(80 * '-') # Print line
+
+text = TEXTS[(int(choice_text)) - 1]    # =>int
+                                        # 1, 2 and 3 is in list, therefore -1
+print(f'Your selection is this text: \n{text}')
+print(80 * '-') # Print line
 
 
 
-print(f'For key {username} is value {USERS[username]}')
 
 
 
