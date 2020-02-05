@@ -112,9 +112,13 @@ words = (str.split(text))
 
 print(f'There are {len(words)} words in the selected text.')
 
+upper_word = []
+
 for word in words:
     if word[0].isupper():
-        print(f'There are {word} title case words')
+        upper_word += '1'
+
+print(f'There are {len(upper_word)} title case words')
 
 
 
