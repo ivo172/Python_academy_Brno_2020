@@ -110,6 +110,11 @@ print(80 * '-')  # Print line
 
 words = (str.split(text))
 
-
-
 print(f'There are {len(words)} words in the selected text.')
+
+for word in words:
+    if word[0].isupper():
+        print(f'There are {word} title case words')
+
+
+
