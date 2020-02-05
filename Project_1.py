@@ -1,6 +1,5 @@
 '''
 5. Calculate the following statistics for the selected text:
-    number of words in total
     number of words starting with capital letter
     number of uppercase words
     number of lowercase words
@@ -60,7 +59,7 @@ above sea level. The butte is located just
 north of US 30N and the Union Pacific Railroad, 
 which traverse the valley. ''',
 
-'''At the base of Fossil Butte are the bright 
+         '''At the base of Fossil Butte are the bright 
 red, purple, yellow and gray beds of the Wasatch 
 Formation. Eroded portions of these horizontal 
 beds slope gradually upward from the valley floor 
@@ -69,7 +68,7 @@ to the top of the butte are the much steeper
 buff-to-white beds of the Green River Formation, 
 which are about 300 feet thick.''',
 
-'''The monument contains 8198 acres and protects 
+         '''The monument contains 8198 acres and protects 
 a portion of the largest deposit of freshwater fish 
 fossils in the world. The richest fossil fish deposits 
 are found in multiple limestone layers, which lie some 
@@ -78,39 +77,39 @@ represent several varieties of perch, as well as
 other freshwater genera and herring similar to those 
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
-]
-users = {'bob':123, 'ann':'pass123', 'mike':'password123', 'liz':123}
+         ]
+users = {'bob': 123, 'ann': 'pass123', 'mike': 'password123', 'liz': 123}
 
-print(80 * '-') # Print line
+print(80 * '-')  # Print line
 print('Welcome to the app. Please log in:')
 username = input('USER: ')
 
 ok_pass = str(users.get(username, 'wrong'))
 
-if ok_pass == 'wrong':     # Validation username, if username isn't in USERS ==> None
+if ok_pass == 'wrong':  # Validation username, if username isn't in USERS ==> None
     print('Username not found!')
     quit()
 
 password = str(input('PASSWORD: '))
 
-if password == ok_pass:     # Validation password
+if password == ok_pass:  # Validation password
     pass
 else:
     print('Password is wrong!')
     quit()
-print(80 * '-') # Print line
+print(80 * '-')  # Print line
 
 choice_text = input('We have 3 texts to be analyzed. '
                     'Enter a number btw. 1 and 3 to select: ')
-print(80 * '-') # Print line
+print(80 * '-')  # Print line
 
-text = TEXTS[(int(choice_text)) - 1]    # =>int
-                                        # 1, 2 and 3 is in list, therefore -1
+text = TEXTS[(int(choice_text)) - 1]  # =>int
+# 1, 2 and 3 is in list, therefore -1
 print(f'Your selection is this text: \n{text}')
-print(80 * '-') # Print line
+print(80 * '-')  # Print line
+
+words = (str.split(text))
 
 
 
-
-
-
+print(f'There are {len(words)} words in the selected text.')
