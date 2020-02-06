@@ -110,6 +110,15 @@ print(80 * '-')  # Print line
 
 words = (str.split(text))
 
-
-
 print(f'There are {len(words)} words in the selected text.')
+
+upper_word = []
+
+for word in words:
+    if word[0].isupper():
+        upper_word += '1'
+
+print(f'There are {len(upper_word)} title case words')
+
+
+
