@@ -13,7 +13,7 @@
     4 ********* 9
     5 ********** 10
 
-    In the above chart, there is one word of length 1, 11 words of length 2, 15 words of length 3 etc.
+    In the above chart, there is one word of length 1, 11 words of length 2, 15 words of[ length 3 etc.
 
 7. Calculate the sum of all the numeric "words" in the given text. For example the sum for the string below would be 8500:
     "that rises sharply some 1000 feet above
@@ -105,20 +105,43 @@ print(80 * '-')  # Print line
 
 text = TEXTS[(int(choice_text)) - 1]  # =>int
 # 1, 2 and 3 is in list, therefore -1
-print(f'Your selection is this text: \n{text}')
+print(f'Your select: \n{text}')
 print(80 * '-')  # Print line
 
 words = (str.split(text))
 
 print(f'There are {len(words)} words in the selected text.')
 
+title_word = []
+
+for word in words:  # Test first character in word
+    if word[0].isupper():
+        title_word += '1'
+
+print(f'There are {len(title_word)} titlecase words.')
+
 upper_word = []
 
 for word in words:
-    if word[0].isupper():
+    if word.isupper():
         upper_word += '1'
 
-print(f'There are {len(upper_word)} title case words')
+print(f'There are {len(upper_word)} uppercase words.')
 
+lower_word =[]
 
+for word in words:
+    if word.islower():
+        lower_word += '1'
 
+print(f'There are {len(lower_word)} lowercase words.')
+
+numeric_word = []
+
+for word in words:
+    if word.isnumeric():
+        numeric_word += '1'
+
+print(f'There are {len(numeric_word)} numeric string.')
+
+print(80 * '-')  # Print line
