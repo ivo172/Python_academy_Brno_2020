@@ -1,10 +1,4 @@
 '''
-5. Calculate the following statistics for the selected text:
-    number of words starting with capital letter
-    number of uppercase words
-    number of lowercase words
-    number of numeric-only words (e.g. 100, not 100N)
-
 6. Create a bar chart depicting the frequencies of word lengths in the text. For example:
 
     1 * 1
@@ -105,7 +99,7 @@ print(80 * '-')  # Print line
 
 text = TEXTS[(int(choice_text)) - 1]  # =>int
 # 1, 2 and 3 is in list, therefore -1
-print(f'Your select: \n{text}')
+print(f'Select text: \n{text}')
 print(80 * '-')  # Print line
 
 words = (str.split(text))
@@ -143,5 +137,26 @@ for word in words:
         numeric_word += '1'
 
 print(f'There are {len(numeric_word)} numeric string.')
-
 print(80 * '-')  # Print line
+
+i = words
+count_char = []
+
+for word in words:  # Count character in word and added in count_char.
+    if len(word):
+        j = len(word)
+        count_char.append(j)
+
+count_char = sorted(count_char)
+
+char_in_count = count_char[0]   # Character index 0 (first position]
+
+star = count_char.count(char_in_count)
+
+print(star * '*')
+
+count_char.pop(char_in_count)
+
+print(count_char)
+print(char_in_count)
+
