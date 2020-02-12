@@ -4,6 +4,7 @@ Our task is to extract an overview of what unique names
 and surnames do we have in the class.
 """
 
+
 students = ['Adam, Baker', 'Chelsea, Archer',
             'Marcus, Archer', 'Oliver, Cook',
             'Alex, Dyer', 'Sandra, Turner',
