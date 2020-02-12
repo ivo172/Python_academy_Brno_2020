@@ -7,13 +7,13 @@
     4 ********* 9
     5 ********** 10
 
-    In the above chart, there is one word of length 1, 11 words of length 2, 15 words of[ length 3 etc.
+    In the above chart, there is one word of length 1, 11 words of length 2,
+    15 words of[ length 3 etc.
 
-7. Calculate the sum of all the numeric "words" in the given text. For example the sum for the string below would be 8500:
-    "that rises sharply some 1000 feet above
-    Twin Creek Valley to an elevation of more
-    than 7500 feet above sea level. The butte
-    is located just north of US 30N"
+7. Calculate the sum of all the numeric "words" in the given text. For
+example the sum for the string below would be 8500: "that rises sharply some
+1000 feet above Twin Creek Valley to an elevation of more than 7500 feet
+above sea level. The butte is located just north of US 30N"
 
 ----------------------------------------
 Welcome to the app. Please log in:
@@ -122,7 +122,7 @@ for word in words:
 
 print(f'There are {len(upper_word)} uppercase words.')
 
-lower_word =[]
+lower_word = []
 
 for word in words:
     if word.islower():
@@ -149,14 +149,14 @@ for word in words:  # Count character in word and added in count_char.
 
 count_char = sorted(count_char)
 
-char_in_count = count_char[0]   # Character index 0 (first position]
+char_in_count = count_char[0]  # Character index 0 (first position]
 
-star = count_char.count(char_in_count)
+star = count_char.count(char_in_count)  # the number of repetitions
 
-print(star * '*')
+star_line = star * '*'
+print(f'{char_in_count} {star_line} {star}')
 
 count_char.pop(char_in_count)
 
 print(count_char)
 print(char_in_count)
-
