@@ -1,8 +1,8 @@
+
 """
 Our task is to extract an overview of what unique names
 and surnames do we have in the class.
 """
-from typing import Any, Union
 
 students = ['Adam, Baker', 'Chelsea, Archer',
             'Marcus, Archer', 'Oliver, Cook',
@@ -20,12 +20,14 @@ students = ['Adam, Baker', 'Chelsea, Archer',
             'Sandra, Slater', 'Curt, Dyer']
 
 
-student = ()
-names = []
-
+names = set()
+surnames = set()
 
 while students:
-    student = students.pop(0)
-    names = student.split()
-    print(names)
+    full_name = students.pop()
+    name, surname = full_name.split(',')
+    names.add(name)
+    surnames.add(surname)
 
+print(f'Unique names: {names}')
+print(f'Unique surnames: {surnames}')
