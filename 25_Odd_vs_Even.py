@@ -24,14 +24,7 @@ for num in nums:
 print(f'Even numbers: {even_nums}')
 print(f'Odd numbers: {odd_nums}')
 
-sum_even = 0
-
-for num in even_nums:
-    sum_even = sum_even + num
-
-sum_odd = 0
-
-for num in odd_nums:
-    sum_odd = sum_odd + num
+sum_even = sum(even_nums)
+sum_odd = sum(odd_nums)
 
 print(f'The difference is {abs(sum_even - sum_odd)} ')

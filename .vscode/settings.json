@@ -1,0 +1,6 @@
+{
+    "docstringFormatter.makeSummaryMultiline": true,
+    "docstringFormatter.preSummaryNewline": true,
+    "docstringFormatter.wrapSummariesLength": 80,
+    "docstringFormatter.wrapDescriptionsLength": 80
+}
