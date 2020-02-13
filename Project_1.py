@@ -157,7 +157,7 @@ star = count_char.count(char_in_count)  # the number of repetitions
 star_line = star * '*'
 print(f'{char_in_count} {star_line} {star}')
 
-count_char.pop(char_in_count)
+#count_char.min(char_in_count)
 
 print(count_char)
 print(char_in_count)
