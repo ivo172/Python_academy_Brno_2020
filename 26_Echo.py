@@ -13,14 +13,12 @@ The resulting sentence cannot begin with space, unless the input sentence contai
 num_rep = int(input('Number of repetition: '))
 sentence = input('Enter sentence: ')
 
-output = []
+output = ''
 
-sentence.split('')
+words = list(sentence.split())
 
-print(sentence)
-
-for word in sentence:
-    output.append(num_rep * word)
-    
+while words:
+    word = words.pop(0)
+    output = output + ((word + ' ') * num_rep)
 
 print(output)
