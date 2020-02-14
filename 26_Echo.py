@@ -15,7 +15,7 @@ sentence = input('Enter sentence: ')
 
 output = []
 
-sentence.split('')
+sentence.split()
 
 print(sentence)
 
