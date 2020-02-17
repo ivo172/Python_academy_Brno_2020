@@ -150,7 +150,7 @@ for word in words:  # Count character in word and added in count_char.
 
 count_char = sorted(count_char) # Sorted number in list count_char
 
-print(count_char)
+print(count_char) # print for help
 
 for number in count_char:
     char_in_count = count_char[0]  # Character index 0 (first position]
