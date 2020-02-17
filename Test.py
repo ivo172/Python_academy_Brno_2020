@@ -25,4 +25,18 @@ else:
     print('No such word: ', position)
  """
 
- 
+
+data = [['ID','Name', 'Price', 'Amount', 'Supplier'],
+        ['321','Ibalgin', 40.50, 2841, 'Zentiva'],
+        ['534','Paralen', 19.90, 3229, 'Zentiva'],
+        ['327','Smecta', 68.00, 2709, 'Sipsen'],
+        ['242','Uniclophen', 76.00, 476, 'UNIMED']]
+
+total_price = 0.0
+
+for list_ in range(1, len(data)):
+    for index, item in enumerate(data[list_]):
+        if index == 2:
+            total_price = total_price + item
+
+print(total_price)
