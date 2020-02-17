@@ -1,3 +1,4 @@
+
 '''
 6. Create a bar chart depicting the frequencies of word lengths in the text. For example:
 
