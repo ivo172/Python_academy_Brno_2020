@@ -73,11 +73,8 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
          ]
+
 users = {'bob': 123, 'ann': 'pass123', 'mike': 'password123', 'liz': 123}
-
-
-
-
 
 print(80 * '-')  # Print line
 print('Welcome to the app. Please log in:')
@@ -91,11 +88,10 @@ if ok_pass == 'wrong':  # Validation username, if username isn't in USERS ==> No
 
 password = str(input('PASSWORD: '))
 
-if password == ok_pass:  # Validation password
-    pass
-else:
+if password != ok_pass:  # Validation password
     print('Password is wrong!')
     quit()
+
 print(80 * '-')  # Print line
 
 choice_text = input('We have 3 texts to be analyzed. '
@@ -116,7 +112,6 @@ title_word = []
 for word in words:  # Test first character in word
     if word[0].isupper():
         title_word += '1'
-
 print(f'There are {len(title_word)} titlecase words.')
 
 upper_word = []
@@ -124,7 +119,6 @@ upper_word = []
 for word in words:
     if word.isupper():
         upper_word += '1'
-
 print(f'There are {len(upper_word)} uppercase words.')
 
 lower_word = []
@@ -132,7 +126,6 @@ lower_word = []
 for word in words:
     if word.islower():
         lower_word += '1'
-
 print(f'There are {len(lower_word)} lowercase words.')
 
 numeric_word = []
@@ -140,26 +133,15 @@ numeric_word = []
 for word in words:
     if word.isnumeric():
         numeric_word += '1'
-
 print(f'There are {len(numeric_word)} numeric string.')
 print(80 * '-')  # Print line
 
-i = words
 count_char = []
 
 for word in words:  # Count character in word and added in count_char.
-    if len(word):
-        j = len(word)
-        count_char.append(j)
+    count_char.append(len(word))
 
 count_char = sorted(count_char) # Sorted number in list count_char
-
 print(count_char) # print for help
 
-for number in count_char:
-    char_in_count = count_char[0]  # Character index 0 (first position]
-    star = count_char.count(char_in_count)  # The number of repetitions
-    star_line = star * '*'
-    del count_char[0:star]
-    print(f'{char_in_count} {star_line} {star}')
 
