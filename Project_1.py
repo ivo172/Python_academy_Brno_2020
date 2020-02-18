@@ -1,4 +1,3 @@
-
 '''
 6. Create a bar chart depicting the frequencies of word lengths in the text. For example:
 
@@ -73,7 +72,6 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
          ]
-
 users = {'bob': 123, 'ann': 'pass123', 'mike': 'password123', 'liz': 123}
 
 print(80 * '-')  # Print line
@@ -100,6 +98,9 @@ print(80 * '-')  # Print line
 
 text = TEXTS[(int(choice_text)) - 1]  # =>int
 # 1, 2 and 3 is in list, therefore -1
+
+text = text.replace(',','').replace('.','')
+
 print(f'Select text: \n{text}')
 print(80 * '-')  # Print line
 
@@ -141,10 +142,14 @@ count_char = []
 for word in words:  # Count character in word and added in count_char.
     count_char.append(len(word))
 
+characters = {}
+count_char = sorted(count_char)  # Sorted number in list count_char
 
-count_char = sorted(count_char) # Sorted number in list count_char
+while count_char:
+    char = count_char.pop(0)
+    characters[char] = characters.get(char, 0) + 1
 
+for x, y in characters.items():
+    print(f'{x:>2} {y * "*"} {y}')
 
-print(count_char) # print for help
-
-
+print(80 * '-')  # Print line
