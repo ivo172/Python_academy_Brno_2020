@@ -76,6 +76,9 @@ garpike and stingray are also present.'''
 users = {'bob': 123, 'ann': 'pass123', 'mike': 'password123', 'liz': 123}
 
 
+
+
+
 print(80 * '-')  # Print line
 print('Welcome to the app. Please log in:')
 username = input('USER: ')
