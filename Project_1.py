@@ -1,3 +1,4 @@
+
 '''
 6. Create a bar chart depicting the frequencies of word lengths in the text. For example:
 
@@ -148,16 +149,14 @@ for word in words:  # Count character in word and added in count_char.
         j = len(word)
         count_char.append(j)
 
-count_char = sorted(count_char)
+count_char = sorted(count_char) # Sorted number in list count_char
 
-char_in_count = count_char[0]  # Character index 0 (first position]
+print(count_char) # print for help
 
-star = count_char.count(char_in_count)  # the number of repetitions
+for number in count_char:
+    char_in_count = count_char[0]  # Character index 0 (first position]
+    star = count_char.count(char_in_count)  # The number of repetitions
+    star_line = star * '*'
+    del count_char[0:star]
+    print(f'{char_in_count} {star_line} {star}')
 
-star_line = star * '*'
-print(f'{char_in_count} {star_line} {star}')
-
-#count_char.min(char_in_count)
-
-print(count_char)
-print(char_in_count)
