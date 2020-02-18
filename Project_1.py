@@ -141,7 +141,10 @@ count_char = []
 for word in words:  # Count character in word and added in count_char.
     count_char.append(len(word))
 
+
 count_char = sorted(count_char) # Sorted number in list count_char
+
+
 print(count_char) # print for help
 
 
