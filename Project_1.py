@@ -65,43 +65,33 @@ words = (str.split(text))
 print(f'There are {len(words)} words in the selected text.')
 
 title_word = []
+upper_word = []
+lower_word = []
+numeric_word = []
+suma_num_word = 0.0
+count_char = []
+characters = {}
 
 for word in words:  # Test first character in word
     if word[0].isupper():
         title_word += '1'
-print(f'There are {len(title_word)} titlecase words.')
-
-upper_word = []
-
-for word in words:
-    if word.isupper():
+    elif word.isupper():
         upper_word += '1'
-print(f'There are {len(upper_word)} uppercase words.')
-
-lower_word = []
-
-for word in words:
-    if word.islower():
+    elif word.islower():
         lower_word += '1'
-print(f'There are {len(lower_word)} lowercase words.')
-
-numeric_word = []
-suma_num_word = 0
-
-for word in words:
-    if word.isnumeric():
+    elif word.isnumeric():
         suma_num_word = suma_num_word + int(word) # Count numeric word in text
         numeric_word += '1'
+    count_char.append(len(word)) # Count character in word and added in count_char.
+
+count_char = sorted(count_char)  # Sorted number in list count_char
+
+
+print(f'There are {len(title_word)} titlecase words.')
+print(f'There are {len(upper_word)} uppercase words.')
+print(f'There are {len(lower_word)} lowercase words.')
 print(f'There are {len(numeric_word)} numeric string.')
 print(80 * '-')  # Print line
-
-count_char = []
-
-for word in words:  # Count character in word and added in count_char.
-    count_char.append(len(word))
-
-characters = {}
-count_char = sorted(count_char)  # Sorted number in list count_char
 
 while count_char:
     char = count_char.pop(0)                        # from list to dict.
