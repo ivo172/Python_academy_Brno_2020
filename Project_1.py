@@ -1,8 +1,3 @@
-'''
-----------------------------------------
-If we summed all the numbers in this text we would get: 300.0
-----------------------------------------
-'''
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer, 
 Fossil Butte is a ruggedly impressive 
@@ -32,6 +27,7 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
          ]
+
 users = {'bob': 123, 'ann': 'pass123', 'mike': 'password123', 'liz': 123}
 
 print(80 * '-')  # Print line
@@ -90,9 +86,11 @@ for word in words:
 print(f'There are {len(lower_word)} lowercase words.')
 
 numeric_word = []
+suma_num_word = 0
 
 for word in words:
     if word.isnumeric():
+        suma_num_word = suma_num_word + int(word) # Count numeric word in text
         numeric_word += '1'
 print(f'There are {len(numeric_word)} numeric string.')
 print(80 * '-')  # Print line
@@ -106,10 +104,12 @@ characters = {}
 count_char = sorted(count_char)  # Sorted number in list count_char
 
 while count_char:
-    char = count_char.pop(0)
+    char = count_char.pop(0)                        # from list to dict.
     characters[char] = characters.get(char, 0) + 1
 
 for x, y in characters.items():
-    print(f'{x:>2} {y * "*"} {y}')
+    print(f'{x:>2} {y * "*"} {y}')  # Print from dictionary, x = key, y = value
 
+print(80 * '-')  # Print line
+print(f'If we summed all the numbers in this text we would get: {suma_num_word}')
 print(80 * '-')  # Print line
