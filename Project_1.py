@@ -1,48 +1,3 @@
-'''
-6. Create a bar chart depicting the frequencies of word lengths in the text. For example:
-
-    1 * 1
-    2 *********** 11
-    3 *************** 15
-    4 ********* 9
-    5 ********** 10
-
-    In the above chart, there is one word of length 1, 11 words of length 2,
-    15 words of[ length 3 etc.
-
-7. Calculate the sum of all the numeric "words" in the given text. For
-example the sum for the string below would be 8500: "that rises sharply some
-1000 feet above Twin Creek Valley to an elevation of more than 7500 feet
-above sea level. The butte is located just north of US 30N"
-
-----------------------------------------
-Welcome to the app. Please log in:
-USERNAME: bob
-PASSWORD: 123
-----------------------------------------
-We have 3 texts to be analyzed.
-Enter a number btw. 1 and 3 to select: 2
-----------------------------------------
-There are 62 words in the selected text.
-There are 10 titlecase words
-There are 0 uppercase words
-There are 51 lowercase words
-There are 1 numeric strings
-----------------------------------------
- 2 ******* 7
- 3 ***************** 17
- 4 ********* 9
- 5 ********** 10
- 6 ******* 7
- 7 *** 3
- 8 ** 2
- 9 ***** 5
-10 * 1
-13 * 1
-----------------------------------------
-If we summed all the numbers in this text we would get: 300.0
-----------------------------------------
-'''
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer, 
 Fossil Butte is a ruggedly impressive 
@@ -72,8 +27,8 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
          ]
-users = {'bob': 123, 'ann': 'pass123', 'mike': 'password123', 'liz': 123}
 
+users = {'bob': 123, 'ann': 'pass123', 'mike': 'password123', 'liz': 123}
 
 print(80 * '-')  # Print line
 print('Welcome to the app. Please log in:')
@@ -87,11 +42,10 @@ if ok_pass == 'wrong':  # Validation username, if username isn't in USERS ==> No
 
 password = str(input('PASSWORD: '))
 
-if password == ok_pass:  # Validation password
-    pass
-else:
+if password != ok_pass:  # Validation password
     print('Password is wrong!')
     quit()
+
 print(80 * '-')  # Print line
 
 choice_text = input('We have 3 texts to be analyzed. '
@@ -100,6 +54,9 @@ print(80 * '-')  # Print line
 
 text = TEXTS[(int(choice_text)) - 1]  # =>int
 # 1, 2 and 3 is in list, therefore -1
+
+text = text.replace(',','').replace('.','')
+
 print(f'Select text: \n{text}')
 print(80 * '-')  # Print line
 
@@ -108,56 +65,41 @@ words = (str.split(text))
 print(f'There are {len(words)} words in the selected text.')
 
 title_word = []
+upper_word = []
+lower_word = []
+numeric_word = []
+suma_num_word = 0.0
+count_char = []
+characters = {}
 
 for word in words:  # Test first character in word
     if word[0].isupper():
         title_word += '1'
+    elif word.isupper():
+        upper_word += '1'
+    elif word.islower():
+        lower_word += '1'
+    elif word.isnumeric():
+        suma_num_word = suma_num_word + int(word) # Count numeric word in text
+        numeric_word += '1'
+    count_char.append(len(word)) # Count character in word and added in count_char.
+
+count_char = sorted(count_char)  # Sorted number in list count_char
+
 
 print(f'There are {len(title_word)} titlecase words.')
-
-upper_word = []
-
-for word in words:
-    if word.isupper():
-        upper_word += '1'
-
 print(f'There are {len(upper_word)} uppercase words.')
-
-lower_word = []
-
-for word in words:
-    if word.islower():
-        lower_word += '1'
-
 print(f'There are {len(lower_word)} lowercase words.')
-
-numeric_word = []
-
-for word in words:
-    if word.isnumeric():
-        numeric_word += '1'
-
 print(f'There are {len(numeric_word)} numeric string.')
 print(80 * '-')  # Print line
 
-i = words
-count_char = []
+while count_char:
+    char = count_char.pop(0)                        # from list to dict.
+    characters[char] = characters.get(char, 0) + 1
 
-for word in words:  # Count character in word and added in count_char.
-    if len(word):
-        j = len(word)
-        count_char.append(j)
+for x, y in characters.items():
+    print(f'{x:>2} {y * "*"} {y}')  # Print from dictionary, x = key, y = value
 
-count_char = sorted(count_char)
-
-char_in_count = count_char[0]  # Character index 0 (first position]
-
-star = count_char.count(char_in_count)  # the number of repetitions
-
-star_line = star * '*'
-print(f'{char_in_count} {star_line} {star}')
-
-#count_char.min(char_in_count)
-
-print(count_char)
-print(char_in_count)
+print(80 * '-')  # Print line
+print(f'If we summed all the numbers in this text we would get: {suma_num_word}')
+print(80 * '-')  # Print line
