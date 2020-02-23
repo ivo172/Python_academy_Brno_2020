@@ -1,25 +1,19 @@
 words = 'A speech sound that is produced by comparatively open configuration of the vocal trajct.'
-words = words.strip('.')
-splited_wors = words.split()
-print(splited_wors)
 
-vowel_count = 0
-cons_count = 0
+count_vowels = 0
+count_cons = 0
+char = []
+vowels = ('aeiouy')
 
-for word in splited_wors:
-    for char in word:
-        if char == 'a':
-            vowel_count = vowel_count + 1  
-        if char == 'A':
-            vowel_count = vowel_count + 1 
-        if char == 'e':
-            vowel_count = vowel_count + 1
-        if char == 'i':
-            vowel_count = vowel_count + 1
-        if char == 'o':
-            vowel_count = vowel_count + 1 
-        if char == 'u':
-            vowel_count = vowel_count + 1          
-        else:
-            cons_count = cons_count + 1
-print(vowel_count, cons_count)    
+print(words)
+
+for char in words:
+    if not char.isalpha():
+        continue
+    char = char.lower()
+    if char in vowels:
+        count_vowels = count_vowels + 1
+    else: 
+        count_cons = count_cons + 1
+        
+print(f'No. vowels: {count_vowels} No. consonants: {count_cons}')
