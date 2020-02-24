@@ -1,3 +1,16 @@
+words =['bbc', 'def', 'klm', 'kla']
+word_a = words.pop(0)
+
+print(word_a)
+
+for word in words:
+    if word > word_a:
+        word_a = word_a + word
+
+print(word_a)
+
+
+
 # text = '''
 # Situated about 10 miles west of Kemmerer,
 # Fossil Butte is a ruggedly impressive
@@ -49,24 +62,24 @@
 
 
 
-lenght_side = int(input('Enter lenght side: '))
-i = 1
+# lenght_side = int(input('Enter lenght side: '))
+# i = 1
 
-for i in range(0, lenght_side+1):
-    if i:
-        print(lenght_side * '# ')
-        i =+ i
+# for i in range(0, lenght_side+1):
+#     if i:
+#         print(lenght_side * '# ')
+#         i =+ i
 
 
 
-size = 10
-sym = ['#',' ']
-desk = []
+# size = 10
+# sym = ['#',' ']
+# desk = []
 
-for r,row in enumerate(range(size)):
-    line = []
-    for c,cell in enumerate(range(size)):
-        line.append(sym[(r+c)%len(sym)])
-    desk.append(''.join(line))
+# for r,row in enumerate(range(size)):
+#     line = []
+#     for c,cell in enumerate(range(size)):
+#         line.append(sym[(r+c)%len(sym)])
+#     desk.append(''.join(line))
     
-print('\n'.join(desk))
+# print('\n'.join(desk))
