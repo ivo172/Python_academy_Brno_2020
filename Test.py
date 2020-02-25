@@ -1,13 +1,50 @@
-words =['bbc', 'def', 'klm', 'kla']
-word_a = words.pop(0)
+my_string = 'New York'
 
-print(word_a)
+for char in reversed(my_string):
+    print(char, end='')
 
-for word in words:
-    if word > word_a:
-        word_a = word_a + word
 
-print(word_a)
+
+
+# def convert_height(inches):
+#     return inches * 0.025
+#
+#
+# def convert_weight(pounds):
+#     return pounds * 0.45
+#
+#
+# def calculate_bmi(pounds, inches):
+#     kilograms = convert_weight(pounds)
+#     meters = convert_height(inches)
+#     bmi = kilograms / meters**2
+#     return bmi
+#
+#
+# print(calculate_bmi(185, 89))
+
+
+
+# def division(x,y):
+#     if y != 0:
+#         return x/y
+#
+# print(division(8,4))
+
+
+
+
+
+# words =['bbc', 'def', 'klm', 'kla']
+# word_a = words.pop(0)
+#
+# print(word_a)
+#
+# for word in words:
+#     if word > word_a:
+#         word_a = word_a + word
+#
+# print(word_a)
 
 
 
