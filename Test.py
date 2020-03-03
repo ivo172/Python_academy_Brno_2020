@@ -1,10 +1,10 @@
-my_string = 'New York'
-
-for char in reversed(my_string):
-    print(char, end='')
-
-
-
+# my_string = 'New York'
+#
+# for char in reversed(my_string):
+#     print(char, end='')
+#
+#
+#
 
 # def convert_height(inches):
 #     return inches * 0.025
