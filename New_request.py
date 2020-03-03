@@ -1,4 +1,4 @@
-# import requests
+#
 # from  requests import get
 # import datetime
 #
@@ -9,18 +9,18 @@
 # json_result['date'] = str(today)
 # print(json_result)
 
-# import numpy as np
-# import matpolotlib.pyplot as plt
-#
-# def func(x):
-#     y = 2 * x + 2
-#     return y
-#
-# x = np.arange(0, 10)
-# y = func(x)
-#
-# plt.title('Nadpis')
-# plt.xlabel('x label a')
-# plt.plot(x, y)
-# plt.show()
+import numpy as np
+import matpolotlib.pyplot as plt
+
+def func(x):
+    y = 2 * x + 2
+    return y
+
+x = np.arange(0, 10)
+y = func(x)
+
+plt.title('Nadpis')
+plt.xlabel('x label a')
+plt.plot(x, y)
+plt.show()
 
