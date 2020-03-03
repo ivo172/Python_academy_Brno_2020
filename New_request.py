@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-from  requests import get
-import datetime
-=======
-#
 # from  requests import get
 # import datetime
 #
@@ -15,7 +9,7 @@ import datetime
 # print(json_result)
 
 import numpy as np
-import matpolotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 def func(x):
     y = 2 * x + 2
@@ -28,11 +22,3 @@ plt.title('Nadpis')
 plt.xlabel('x label a')
 plt.plot(x, y)
 plt.show()
->>>>>>> 79c222f5801af40d6de5b06661e34db95523f148
-
-result = get('https://api.github.com/search/repositories', params={'q': 'requests+language:python'})
-json_result = result.json()
-today = datetime.datetime.now()
-today = today.strftime('%d.%m.%y %H:%M')
-json_result['date'] = str(today)
-print(json_result)
