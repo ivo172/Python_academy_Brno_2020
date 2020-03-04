@@ -1,4 +1,3 @@
-#
 # from  requests import get
 # import datetime
 #
@@ -23,4 +22,3 @@ plt.title('Nadpis')
 plt.xlabel('x label a')
 plt.plot(x, y)
 plt.show()
-

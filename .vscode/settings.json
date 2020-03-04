@@ -3,5 +3,10 @@
     "docstringFormatter.preSummaryNewline": true,
     "docstringFormatter.wrapSummariesLength": 80,
     "docstringFormatter.wrapDescriptionsLength": 80,
-    "python.pythonPath": "venv\\Scripts\\python.exe"
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+<<<<<<< HEAD
+=======
+    "python.linting.pylintEnabled": true,
+>>>>>>> 79c222f5801af40d6de5b06661e34db95523f148
+    "python.linting.enabled": true
 }
