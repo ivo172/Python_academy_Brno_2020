@@ -12,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def func(x):
-    y = 2**x + 2
+    y = 2*x + 2
     return y
 
 x = np.arange(0, 10)
