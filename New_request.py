@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-from  requests import get
-import datetime
-=======
-#
 # from  requests import get
 # import datetime
 #
@@ -15,24 +9,32 @@ import datetime
 # print(json_result)
 
 import numpy as np
-import matpolotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
-def func(x):
-    y = 2 * x + 2
-    return y
+x = np.linspace(0, 2, 100)
 
-x = np.arange(0, 10)
-y = func(x)
+plt.plot(x, x, label='linear')
+plt.plot(x, x**2, label='quadratic')
+plt.plot(x, x**3, label='cubic')
 
-plt.title('Nadpis')
-plt.xlabel('x label a')
-plt.plot(x, y)
+plt.xlabel('x label')
+plt.ylabel('y label')
+
+plt.title("Simple Plot")
+
+plt.legend()
+
 plt.show()
->>>>>>> 79c222f5801af40d6de5b06661e34db95523f148
 
-result = get('https://api.github.com/search/repositories', params={'q': 'requests+language:python'})
-json_result = result.json()
-today = datetime.datetime.now()
-today = today.strftime('%d.%m.%y %H:%M')
-json_result['date'] = str(today)
-print(json_result)
+
+# def func(x):
+#     y = 2 * x + 2
+#     return y
+
+# x = np.arange(0, 10)
+# y = func(x)
+
+# plt.title('Funkce')
+# plt.xlabel('x label a')
+# plt.plot(x, y)
+# plt.show()
