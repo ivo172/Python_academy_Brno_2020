@@ -1,21 +1,21 @@
 import random
 
-words = {'articles' : ('the', 'a', 'an'), 'determiners' : ('another', 'this', 'every', 'many'), 
-        'subjects' : ('cat', 'dog', 'man', 'woman'), 'verbs' : ('sang', 'ran', 'jumped'), 
-        'adverbs' : ('loudly', 'quietly', 'well', 'badly')}
+words = {'article': ('the', 'a', 'an'), 'determiner': ('another', 'this', 'every', 'many'),
+         'subject': ('cat', 'dog', 'man', 'woman'), 'verb': ('sang', 'ran', 'jumped'),
+         'adverb': ('loudly', 'quietly', 'well', 'badly')}
 
-combine = [['article', 'subject', 'verb', 'adverb'], ['determiner', 'subject', 'verb'], ['determiner', 'subject', 'verb', 'adverb']]
+combines = [['article', 'subject', 'verb', 'adverb'], ['determiner', 'subject', 'verb'],
+           ['determiner', 'subject', 'verb', 'adverb']]
+
 
 def lore_poetry(num_row):
-    i = []
     rows = []
-    if i in range(num_row):
+    for _ in range(num_row):
         row = []
-        combine = random.choice(combine)
-        for comb in combine:
+        combin = random.choice(combines)
+        for comb in combin:
             row.append(random.choice(words[comb]))
-        rows.append(''.join(row))
+        rows.append(' '.join(row))
     result = '\n'.join(rows)
+    print(result)
     return result
-
-poetry = lore_poetry(8)
