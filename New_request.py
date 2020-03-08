@@ -11,10 +11,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def func(x):
-    y = 2*x + 2
-    return y
+x = np.linspace(0, 2, 100)
 
-plt.legend()
+plt.plot(x, x, label='linear')
+plt.plot(x, x**2, label='quadratic')
+plt.plot(x, x**3, label='cubic')
 
+plt.xlabel('x label')
+plt.ylabel('y label')
+
+plt.title("Simple Plot")
 plt.show()
