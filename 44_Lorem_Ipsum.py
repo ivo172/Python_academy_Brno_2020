@@ -10,7 +10,7 @@ combines = [['article', 'subject', 'verb', 'adverb'], ['determiner', 'subject', 
 
 def lore_poetry(num_row):
     rows = []
-    for _ in range(num_row):
+    for i in range(num_row):
         row = []
         combin = random.choice(combines)
         for comb in combin:
@@ -19,3 +19,6 @@ def lore_poetry(num_row):
     result = '\n'.join(rows)
     print(result)
     return result
+
+
+poetry = lore_poetry(8)
