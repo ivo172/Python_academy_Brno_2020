@@ -1,3 +1,2 @@
-Prvni radek
-Druhy radek
-Treti radek
+text1 
+ text2

@@ -13,7 +13,7 @@ print(handler_2)
 
 # function for read row number 
 
-def read_specific_line(file_path, line_number: int):    
+def read_specific_line(file_path, line_number: int) -> None:    
     handler_2 = open(file_path)
     current_line = None
     current_line_number = 0
@@ -23,3 +23,5 @@ def read_specific_line(file_path, line_number: int):
     print(current_line)
 
 read_specific_line(path + '/text.txt', 3)
+
+
