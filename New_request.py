@@ -17,15 +17,8 @@ plt.plot(x, x, label='linear')
 plt.plot(x, x**2, label='quadratic')
 plt.plot(x, x**3, label='cubic')
 
-<<<<<<< HEAD
-plt.title('Nadpis')
-plt.xlabel('x label a')
-plt.plot(x, y)
-plt.show()
-=======
 plt.xlabel('x label')
 plt.ylabel('y label')
 
 plt.title("Simple Plot")
 plt.show()
->>>>>>> 22d20a6a5b9b6e7fdef9d82a6c6a7263d59b1a46
