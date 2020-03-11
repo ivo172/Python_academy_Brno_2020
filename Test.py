@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+# def fuunction(a, b, *args, default=None, **kwargs):
+#     print(a, b, args, default, kwargs)
+
+# function(1, 2, 3, 4, 5, 6, )
+
+
+
+
 # my_string = 'New York'
 #
 # for char in reversed(my_string):
