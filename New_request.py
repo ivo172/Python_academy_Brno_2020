@@ -10,7 +10,7 @@
 # print(json_result)
 
 import numpy as np
-import matpolotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 def func(x):
     y = 2 * x + 2
@@ -23,4 +23,3 @@ plt.title('Nadpis')
 plt.xlabel('x label a')
 plt.plot(x, y)
 plt.show()
-
