@@ -1,13 +1,7 @@
 import os.path
+
 path = os.path.dirname(__file__)
 
-handler_2 = open(path + '/text.txt')
-
-print(handler_2.readline())
-
-print(handler_2.tell())
-
-print(handler_2)
 
 # function for read row number
 
@@ -23,6 +17,12 @@ def read_specific_line(file_path, line_number: int) -> None:
 read_specific_line(path + '/text.txt', 3)
 
 
-
-
+with open(path + '/text.txt') as handler:
+    print(handler.readline())
+    print(handler.tell())
+    print(handler.readline())
+    print(handler.tell())
+    print(handler.readline())
+    print(handler.tell())
+    # print(handler)
 
