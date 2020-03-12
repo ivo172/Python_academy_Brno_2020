@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 def luhn(num):
     num_str = str(num).replace(' ','')
     s1 = s2 = 0
@@ -15,7 +15,7 @@ def luhn(num):
 
 num = input('Enter card number: ')
 print(luhn(num))
-=======
+
 
 trial_num = input('Enter card number: ')
->>>>>>> Stashed changes
+
