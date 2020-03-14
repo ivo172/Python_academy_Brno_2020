@@ -8,7 +8,7 @@ def all_anagrams(words):
         seq = sorted(words.pop())
         for word in words:
             if seq != sorted(word):
-               result = False
+                result = False
     else:
         result = False
     return result
