@@ -14,7 +14,3 @@ def luhn(num):
     result = True if (s1 + s2) % 10 == 0 else False
 
     return result
-
-
-num = 61789372994
-print(luhn(num))
