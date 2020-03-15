@@ -1,7 +1,7 @@
 # The main function should be named main(), it should call all the other
 # needed function and return the result. As you can see from the example
 # above, The result should be a dictionary with keys domains and
-# emails_with_nums, containing values - lists with relevnt emails.
+# emails_with_nums, containing values - lists with relevant emails.
 
 my_str = '''Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Mauris vulputate lacus id eros consequat tempus.
@@ -22,16 +22,24 @@ my_str = '''Lorem ipsum dolor sit amet, consectetur adipiscing
 
 
 def main(words):
-    words = words.replace(',', '')
-    words = words.split()
+    e_mails = separator_email(words)
+    e_mails = e_mails.split()
+    return e_mails
+
+
+def separator_email(text):
+    text = text.replace(',', '').split()
     email_adr = ''
-    for word in words:
+    for word in text:
         for char in word:
             if char == '@':
                 email_adr = email_adr + ' ' + word
             else:
                 continue
     return email_adr
+
+
+# def domains(e_adress):
 
 
 print(main(my_str))
