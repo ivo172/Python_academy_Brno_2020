@@ -21,13 +21,16 @@ my_str = '''Lorem ipsum dolor sit amet, consectetur adipiscing
         Maecenas gravida turpis nec ultrices aliquet.'''
 
 
-def main(words):
+def main(words):    #main function
     e_mails = separator_email(words)
     e_mails = e_mails.split()
-    return e_mails
+    domains_ = domains(e_mails)
+    domains_with_nums = with_nums(e_mails)
+    result = {'domains' : [domains_], 'emails_with_nums' : [domains_with_nums]}
+    return result
 
 
-def separator_email(text):
+def separator_email(text):  # function separate emails from text
     text = text.replace(',', '').split()
     email_adr = ''
     for word in text:
@@ -39,7 +42,23 @@ def separator_email(text):
     return email_adr
 
 
-# def domains(e_adress):
+def domains(e_adress):  # slice domains from email adress
+    domains = ''
+    for adress in e_adress:
+        domains = domains + ' ' + adress[int(adress.index('@')):
+                                         int(str(len(adress)))]
+    return domains
 
 
-print(main(my_str))
+def with_nums(text): # returns email adress with number
+    word_with_nums = ''
+    for word in text:
+        word_x = word.replace('@','').replace('.','')
+        if not word_x.isalpha():
+            word_with_nums = word_with_nums + ' ' + word
+        else:
+            continue
+    return word_with_nums
+
+
+print(main(my_str)) # call main function an print
