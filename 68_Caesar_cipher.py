@@ -3,10 +3,10 @@ def caesar(message, offset):
     alphabet = list('abcdefghijklmnopqrstuvwxyz')
     alpha = dict(enumerate(alphabet))
     result = ''
-    for char in message:
+    for char in message_:
         index = alphabet.index(char)
         result = result + alpha.get(index + offset)
     return result
 
 
-print(caesar('kolo', 2))
+print(caesar('klmn', 2))
