@@ -33,12 +33,13 @@ def main_game(word):
                 index += 1
             print(f'Yes, there is {count_char} letter "{inp_char}".')
             print(ground_line)
-            if index == len(word):
-                print('Game over')
+            over = ground_line.find('_')
+            if over == -1:
+                print('Victory !!!')
                 exit()
         else:
             print(f'No, the letter "{inp_char}" is not in my word')
     print('Game over')
 
 
-main_game('Hello')
+main_game('Radovan')
