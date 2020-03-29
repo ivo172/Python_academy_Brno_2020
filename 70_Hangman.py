@@ -39,7 +39,8 @@ def main_game(word):
                 exit()
         else:
             print(f'No, the letter "{inp_char}" is not in my word')
+            print(ground_line)
     print('Game over')
 
 
-main_game('Radovan')
+main_game('Full')
