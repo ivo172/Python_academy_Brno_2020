@@ -17,6 +17,8 @@ texts = [['Name', 'Item', 'Amount', 'Unit_Price', 'Total_Price'],
 
 def get_widths(table):
     width = []
+    lines = {}
+    i = 0
 
     for word in table:
         for column in word:
@@ -24,11 +26,19 @@ def get_widths(table):
         else:
             width.append('_')
 
-    index = width.index('_')    # find position '_' in string
+    while width:
+        index = width.index('_')  # find position '_' in string
+        i = i + 1
+        x = (width[:index])
+        line = {i : x}      # create key:value from first line in dictionary "line"
+        lines.update(line)
+        width[:index + 1] = []  # delete first row from "width"
+
+    for key in lines:
+        print(key)
 
 
-
-    return width
+    return lines
 
 
 print(get_widths(texts))
