@@ -33,15 +33,25 @@ def get_widths(table):
         line = {i : x}      # create key:value from first line in dictionary "line"
         lines.update(line)
         width[:index + 1] = []  # delete first row from "width"
+    
+    def max_index(index_pos, lines):    # find max number on position "index_pos" in lines  
+        y_max = 0
+        for key in lines:
+            y = lines.get(key)
+            if y[index_pos] > y_max:
+                y_max = y[index_pos]
+        return y_max
 
-    for key in lines:
-        print(key)
+    column_1_max = max_index(0, lines)
+    column_2_max = max_index(1, lines)
+    column_3_max = max_index(2, lines)
+    column_4_max = max_index(3, lines)
+    column_5_max = max_index(4, lines)
+      
+        
+    print(f'| COLUMN | WIDTH | \n|  COL 1 |   {column_1_max}  |\n|  COL 2 |   {column_2_max}  |\n|  COL 3 |    {column_3_max}  |\n|  COL 4 |   {column_4_max}  |\n|  COL 5 |   {column_5_max}  |')    
 
-
-    return lines
-
-
-print(get_widths(texts))
+get_widths(texts)
 
 
 
