@@ -27,8 +27,16 @@ import os.path
 path = os.path.dirname(__file__)
 
 
+def add_salary_change(read_text, full_name, id, birthdate, salary): # will add new employee in 'salary_change.txt'
+    read_text = read_text.replace('{full_name}', full_name)
+    read_text = read_text.replace('{ID}', id)
+    read_text = read_text.replace('{birthdate}', birthdate)
+    read_text = read_text.replace('{salary}', salary)
+    return read_text
+
+
 def add_job_change(read_text, full_name, id, birthdate, job_title,
-                   position_from):
+                   position_from):      # will add new employee in 'job_change.txt'
     read_text = read_text.replace('{full_name}', full_name)
     read_text = read_text.replace('{ID}', id)
     read_text = read_text.replace('{birthdate}', birthdate)
@@ -43,11 +51,28 @@ print('1. job change')
 print('2. contract prolongation')
 index_file = int(input())
 
-if index_file == 1:
+
+if index_file == 0: # salary
+    with open(path + '\salary_change.txt', 'r', encoding='utf-8') as text:
+        read_text = text.read()         # open and read salary_change.txt
+    result = add_salary_change(read_text, 'Ivo Marek', '123458', '27.4.1965', '2.550')
+    with open(path + '\salary_change_new.txt', 'w', encoding='utf-8') as text:
+        text.write(result)              # open and write salary_change_new.txt
+
+
+if index_file == 1: # job change
     with open(path + '\job_change.txt', 'r', encoding='utf-8') as text:
-        read_text = text.read()
+        read_text = text.read()         # open and read job_change.txt
     result = add_job_change(read_text, 'Ivo Marek', '123458', '27.4.1965',
                             'mechanik', '27.1.1965')
     with open(path + '\job_change_new.txt', 'w', encoding='utf-8') as text:
-        text.write(result)
+        text.write(result)              # open and write job_change_new.txt
 
+
+if index_file == 2: # contract prolongation
+    with open(path + '\job_change.txt', 'r', encoding='utf-8') as text:
+        read_text = text.read()         # open and read job_change.txt
+    result = add_job_change(read_text, 'Ivo Marek', '123458', '27.4.1965',
+                            'mechanik', '27.1.1965')
+    with open(path + '\job_change_new.txt', 'w', encoding='utf-8') as text:
+        text.write(result)              # open and write job_change_new.txt
