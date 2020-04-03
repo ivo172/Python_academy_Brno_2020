@@ -67,37 +67,47 @@ with open(path + '\employees.txt', 'r', encoding='utf-8') as employees:
     read_employees = json.loads(read_employees.replace("'", '"'))  # convert str in dict
 keys = list(read_employees)
 
-def r_employees(keys,index_filex):                      # zde pokracovat !!!
-    for i in keys:
-        id = read_employees[i]['ID']
-        full_name = read_employees[i]['full_name']
-        birthdate = read_employees[i]['birthdate']
-        job_title = read_employees[i]['job_title']
-        position_from = read_employees[i]['position_from']
-        contract_start = read_employees[i]['contract_start']
-        salary = read_employees[i]['salary']
-    print(id, full_name, birthdate, job_title, position_from, contract_start, salary)
+id = ''
+full_name = ''
+birthdate = ''
+job_title = ''
+position_from = ''
+contract_start = ''
+salary = ''
+
+
+
+for i in keys:
+    id = read_employees[i]['ID']
+    full_name = read_employees[i]['full_name']
+    birthdate = read_employees[i]['birthdate']
+    job_title = read_employees[i]['job_title']
+    position_from = read_employees[i]['position_from']
+    contract_start = read_employees[i]['contract_start']
+    salary = read_employees[i]['salary']
+
+print(id, full_name, birthdate, job_title, position_from, contract_start, salary)
 
 if index_file == 0:  # salary
     with open(path + '\salary_change.txt', 'r', encoding='utf-8') as text:
         read_text = text.read()  # open and read salary_change.txt
-    result = add_salary_change(read_text, 'Ivo Marek', '123458', '27.4.1965',
-                               '2.550')
+    result = add_salary_change(read_text, full_name, id, birthdate, salary)
     with open(path + '\salary_change_new.txt', 'w', encoding='utf-8') as text:
         text.write(result)  # open and write salary_change_new.txt
+
 elif index_file == 1:  # job change
     with open(path + '\job_change.txt', 'r', encoding='utf-8') as text:
         read_text = text.read()  # open and read job_change.txt
-    result = add_job_change(read_text, 'Ivo Marek', '123458', '27.4.1965',
-                            'mechanik', '27.1.1965')
+    result = add_job_change(read_text, full_name, id, birthdate, job_title, contract_start)
     with open(path + '\job_change_new.txt', 'w', encoding='utf-8') as text:
         text.write(result)  # open and write job_change_new.txt
+
 elif index_file == 2:  # contract prolongation
     with open(path + '\contract_prolongation.txt', 'r', encoding='utf-8') as text:
         read_text = text.read()  # open and read contract_prolong.txt
-    result = add_contract_prolong(read_text, 'Ivo Marek', '123458', '27.4.1965',
-                                  '31.1.2020')
+    result = add_contract_prolong(read_text, full_name, id, birthdate, position_from)
     with open(path + '\contract_prolong_new.txt', 'w', encoding='utf-8') as text:
         text.write(result)  # open and write job_change_new.txt
+
 else:
     print('Only 0, 1 or 2')

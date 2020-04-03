@@ -6,13 +6,13 @@ Somewhere
             SALARY CHANGE
 
 
-Employee Ivo Marek, (ID: 123458) born on 27.4.1965,
+Employee Bob Doe, (ID: X54321) born on 8.8.1971,
 has agreed to accept change of the salary amounting to
-2.550 dollars.
+23451 dollars.
 
 The new salary shall be paid with the next payroll.
 
 Signature
 
 ______________
-Ivo Marek
+Bob Doe

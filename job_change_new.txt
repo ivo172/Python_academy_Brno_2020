@@ -6,12 +6,12 @@ Somewhere
             JOB CHANGE
 
 
-Employee Ivo Marek, (ID: 123458) born on 27.4.1965,
-hereby agrees to change the job title to mechanik.
+Employee Bob Doe, (ID: X54321) born on 8.8.1971,
+hereby agrees to change the job title to machinist.
 
-This change is valid as of 27.1.1965
+This change is valid as of 1.8.2014
 
 Signature
 
 ______________
-Ivo Marek
+Bob Doe
