@@ -1,6 +1,46 @@
+from PyQt5 import QtWidgets
+app = QtWidgets.QApplication([])
+
+# Hlavní okno
+main = QtWidgets.QWidget()
+main.setWindowTitle('Hello Qt')
+
+# Layout pro hlavní okno
+layout = QtWidgets.QHBoxLayout()
+main.setLayout(layout)
+
+# Nápis
+label = QtWidgets.QLabel('Click the button to change me')
+# Přidáním do layoutu se nápis automaticky stane potomkem hlavního okna
+layout.addWidget(label)
+
+# Tlačítko
+button = QtWidgets.QPushButton('Click me')
+layout.addWidget(button)
+
+# Funkcionalita
+def change_label():
+    label.setText('Good job. +100 points.')
+
+button.clicked.connect(change_label)
+
+# Spuštění
+main.show()
+app.exec()
 
 
 
+# import json
+#
+# d = {'X12345': {'ID': 'X12345', 'full_name': 'Jack Frank', 'birthdate': '1.1.1970', 'job_title': 'welder', 'position_from': '1.5.2015', 'contract_start': '1.2.2013', 'contract_end': '31.12.2020',
+#                'salary': 123456}, 'X54321':  { 'ID': 'X54321', 'full_name': 'Bob Doe', 'birthdate': '8.8.1971', 'job_title': 'machinist',
+#                 'position_from': '1.8.2016', 'contract_start': '1.8.2014', 'contract_end': '31.12.2021',
+#                 'salary': 23451}}
+#
+# json.loads(d.replace("'", '"'))
+#
+# print(type(d))
+# print(d)
 
 
 
