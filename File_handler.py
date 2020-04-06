@@ -6,11 +6,11 @@ path = os.path.dirname(__file__)
 # function for read row number
 
 def read_specific_line(file_path, line_number: int) -> None:
-    with open(file_path) as handler_2:
+    with open(file_path) as handler:
         current_line = None
         current_line_number = 0
         while current_line_number < line_number:
-            current_line = handler_2.readline()
+            current_line = handler.readline()
             current_line_number += 1
         print(current_line)
 
@@ -24,5 +24,5 @@ with open(path + '/text.txt') as handler:
     print(handler.tell())
     print(handler.readline())
     print(handler.tell())
-    # print(handler)
+    print(handler)
 
