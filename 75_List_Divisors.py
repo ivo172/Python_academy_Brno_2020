@@ -18,9 +18,9 @@ def string_x(start_point, end_point, i):  # i = divisor
     return num_
 
 
-print('| Divisor |    Number Divided     |')        # Formatovani neresim ...
-print('===================================')
+print('| Divisor |    Number Divided    |')       
+print('==================================')
 
 for i in range(2, 10):
     result = string_x(start_point, end_point, i)
-    print(f'|    {i}    | {result} |')
+    print(f'|{i:^9}|{result:^22}|')
