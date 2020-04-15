@@ -56,9 +56,23 @@ def diagonal(str_line):
             return True
 
 
+str_ = '1','2','3','4','5','6','7','8','9'
 
+a = str_[0]
+b = str_[1]
+c = str_[2]
+d = str_[3]
+e = str_[4]
+f = str_[5]
+g = str_[6]
+h = str_[7]
+i = str_[8]
 
-str_ = '','','','','','','','',''
+print('----------------------')
+print(f'|{a:^6}|{b:^6}|{c:^6}|')
+print(f'|{d:^6}|{e:^6}|{f:^6}|')
+print(f'|{g:^6}|{h:^6}|{i:^6}|')
+print('----------------------')
 
 win_horizontal = horizont(str_)
 win_vertical = vertical(str_)
