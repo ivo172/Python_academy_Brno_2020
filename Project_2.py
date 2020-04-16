@@ -75,61 +75,81 @@ print(f'|{d:^6}|{e:^6}|{f:^6}|')
 print(f'|{g:^6}|{h:^6}|{i:^6}|')
 print('----------------------')
 
-input_o = int(input('Player o | Please enter your move number:'))
-if input_o == 1:
-      a = 'o'
-if input_o == 2:
-      b = 'o'
-if input_o == 3:
-      c = 'o'
-if input_o == 4:
-      d = 'o'
-if input_o == 5:
-      e = 'o'
-if input_o == 6:
-      f = 'o'
-if input_o == 7:
-      g = 'o'
-if input_o == 8:
-      h = 'o'
-if input_o == 9:
-      i = 'o'
+while True:
+    input_o = int(input('Player o | Please enter your move number:'))
+    if input_o == 1:
+          a = 'o'
+    if input_o == 2:
+          b = 'o'
+    if input_o == 3:
+          c = 'o'
+    if input_o == 4:
+          d = 'o'
+    if input_o == 5:
+          e = 'o'
+    if input_o == 6:
+          f = 'o'
+    if input_o == 7:
+          g = 'o'
+    if input_o == 8:
+          h = 'o'
+    if input_o == 9:
+          i = 'o'
 
-print('----------------------')
-print(f'|{a:^6}|{b:^6}|{c:^6}|')
-print(f'|{d:^6}|{e:^6}|{f:^6}|')
-print(f'|{g:^6}|{h:^6}|{i:^6}|')
-print('----------------------')
+    str_ = a + b + c + d + e + f + g + h + i
+    print('----------------------')
+    print(f'|{a:^6}|{b:^6}|{c:^6}|')
+    print(f'|{d:^6}|{e:^6}|{f:^6}|')
+    print(f'|{g:^6}|{h:^6}|{i:^6}|')
+    print('----------------------')
 
-input_x = int(input('Player x | Please enter your move number:'))
-if input_x == 1:
-      a = 'x'
-if input_x == 2:
-      b = 'x'
-if input_x == 3:
-      c = 'x'
-if input_x == 4:
-      d = 'x'
-if input_x == 5:
-      e = 'x'
-if input_x == 6:
-      f = 'x'
-if input_x == 7:
-      g = 'x'
-if input_x == 8:
-      h = 'x'
-if input_x == 9:
-      i = 'x'
+    if diagonal(str_):
+        print('Win o')
+        exit()
+    if horizont(str_):
+        print('Win o')
+        exit()
+    if vertical(str_):
+        print('Win o')
+        exit()
+    input_x = int(input('Player x | Please enter your move number:'))
+    if input_x == 1:
+          a = 'x'
+    if input_x == 2:
+          b = 'x'
+    if input_x == 3:
+          c = 'x'
+    if input_x == 4:
+          d = 'x'
+    if input_x == 5:
+          e = 'x'
+    if input_x == 6:
+          f = 'x'
+    if input_x == 7:
+          g = 'x'
+    if input_x == 8:
+          h = 'x'
+    if input_x == 9:
+          i = 'x'
 
-print('----------------------')
-print(f'|{a:^6}|{b:^6}|{c:^6}|')
-print(f'|{d:^6}|{e:^6}|{f:^6}|')
-print(f'|{g:^6}|{h:^6}|{i:^6}|')
-print('----------------------')
+    str_ = a + b + c + d + e + f + g + h + i
 
-win_horizontal = horizont(str_)
-win_vertical = vertical(str_)
-win_diagonal = diagonal(str_)
+    print('----------------------')
+    print(f'|{a:^6}|{b:^6}|{c:^6}|')
+    print(f'|{d:^6}|{e:^6}|{f:^6}|')
+    print(f'|{g:^6}|{h:^6}|{i:^6}|')
+    print('----------------------')
 
-if win_horizontal or win_vertical or win_diagonal:
-    print('WINNER')
+    if diagonal(str_):
+        print('Win x')
+        exit()
+    if horizont(str_):
+        print('Win x')
+        exit()
+    if vertical(str_):
+        print('Win x')
+        exit()
+
+
+
+
